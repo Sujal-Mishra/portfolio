@@ -287,3 +287,8 @@ footer {
     padding: 4rem 1.5rem;
   }
 }
+
+.svg-container svg {
+  width: 100%;
+  height: auto;
+}
