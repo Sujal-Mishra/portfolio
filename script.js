@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
-     EMOJI MAP (PROJECT VISUAL IDENTITY)
+     EMOJI MAP (FOR MODAL TITLES)
   ========================================= */
 
   const emojiMap = {
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTitle.innerText = `${emojiMap[title] || ""} ${title}`;
     modalDesc.innerText = desc;
 
-    // SVG loading (current working approach)
-    modalImg.innerHTML = ""; // reset
+    // Load SVG (confirmed working)
+    modalImg.innerHTML = "";
     const object = document.createElement("object");
     object.type = "image/svg+xml";
     object.data = img;
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================================
-     INTERACTIVE BACKGROUND – SMOOTH ORBS
+     INTERACTIVE BACKGROUND ORBS (SMOOTH)
   ========================================= */
 
   const orbs = document.querySelectorAll(".bg-orbs span");
