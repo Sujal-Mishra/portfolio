@@ -1,8 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================================================
+  /* =========================================
+     EMOJI MAP (PROJECT VISUAL IDENTITY)
+  ========================================= */
+
+  const emojiMap = {
+    "SilentVoice": "🖐️",
+    "GreenPrint": "🌱",
+    "Hotel Management System": "🏨",
+    "Carbon Footprint Tracker": "📊",
+    "Quantum Computing & Cybersecurity": "🧠"
+  };
+
+  /* =========================================
      PROJECT MODAL LOGIC
-  ================================================ */
+  ========================================= */
 
   const modal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");
@@ -11,19 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalList = document.getElementById("modalList");
   const closeBtn = document.querySelector(".close");
 
-  window.openModal = function(title, desc, img, points) {
-    modalTitle.innerText = title;
+  window.openModal = function (title, desc, img, points) {
+    // Title with emoji
+    modalTitle.innerText = `${emojiMap[title] || ""} ${title}`;
     modalDesc.innerText = desc;
-    fetch(img)
-  .then(res => res.text())
-  .then(svg => {
-    modalImg.innerHTML = svg;
-  })
-  .catch(() => {
-    modalImg.innerHTML = "<p>Diagram failed to load</p>";
-  });
 
+    // SVG loading (current working approach)
+    modalImg.innerHTML = ""; // reset
+    const object = document.createElement("object");
+    object.type = "image/svg+xml";
+    object.data = img;
+    object.style.width = "100%";
+    object.style.minHeight = "260px";
+    modalImg.appendChild(object);
 
+    // Bullet points
     modalList.innerHTML = "";
     points.forEach(point => {
       const li = document.createElement("li");
@@ -39,27 +53,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
   });
 
-  /* ================================================
-     INTERACTIVE BACKGROUND (MOUSE MOVE)
-  ================================================ */
+  /* =========================================
+     INTERACTIVE BACKGROUND – SMOOTH ORBS
+  ========================================= */
 
   const orbs = document.querySelectorAll(".bg-orbs span");
 
+  let mouseX = 0, mouseY = 0;
+  let orbX = 0, orbY = 0;
+
   document.addEventListener("mousemove", (e) => {
-    orbs.forEach((orb, index) => {
-      const speed = (index + 1) * 0.02;
-      const x = (window.innerWidth / 2 - e.clientX) * speed;
-      const y = (window.innerHeight / 2 - e.clientY) * speed;
-      orb.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
 
-  /* ================================================
-     ORB COLOR CHANGE ON SCROLL
-  ================================================ */
+  function animateOrbs() {
+    orbX += (mouseX - orbX) * 0.05;
+    orbY += (mouseY - orbY) * 0.05;
+
+    orbs.forEach((orb, index) => {
+      const speed = (index + 1) * 0.015;
+      const x = (window.innerWidth / 2 - orbX) * speed;
+      const y = (window.innerHeight / 2 - orbY) * speed;
+      orb.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    requestAnimationFrame(animateOrbs);
+  }
+
+  animateOrbs();
+
+  /* =========================================
+     ORB COLOR CHANGE BASED ON SCROLL
+  ========================================= */
 
   const sections = document.querySelectorAll("[data-orb]");
 
@@ -97,6 +128,3 @@ document.addEventListener("DOMContentLoaded", () => {
   updateOrbColor();
 
 });
-
-
-
