@@ -11,6 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
     "Carbon Footprint Tracker": "📊",
     "Quantum Computing & Cybersecurity": "🧠"
   };
+/* =========================================
+   SCROLL-BASED STORYTELLING
+========================================= */
+
+const storySections = document.querySelectorAll(".section");
+
+function updateStoryFocus() {
+  const mid = window.innerHeight * 0.55;
+
+  storySections.forEach(section => {
+    const story = section.querySelector("[data-story]");
+    if (!story) return;
+
+    const rect = section.getBoundingClientRect();
+    const active = rect.top <= mid && rect.bottom >= mid;
+
+    story.style.opacity = active ? "1" : "0.4";
+    story.style.transform = active ? "translateY(0)" : "translateY(6px)";
+  });
+}
+
+window.addEventListener("scroll", updateStoryFocus);
+updateStoryFocus();
 
   /* ===============================
      PROJECT MODAL
