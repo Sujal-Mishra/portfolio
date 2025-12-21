@@ -607,16 +607,23 @@ footer {
 
 .interests-wrapper {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
-  margin-top: 2rem;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  max-width: 700px;
 }
+
 
 .interests-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+.interests-list {
+  margin-top: 0.5rem;
+}
+
 
 .interests-list button {
   background: none;
