@@ -1,0 +1,25 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: #eaeaea; font-family: Inter, sans-serif; font-size: 14px; }
+    rect { fill: #111; stroke: #f25f4c; rx: 10; }
+    line { stroke: #aaa; stroke-width: 2; marker-end: url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="120" width="140" height="50"/>
+  <text x="75" y="150">User Input</text>
+
+  <rect x="240" y="120" width="180" height="50"/>
+  <text x="255" y="150">Business Logic</text>
+
+  <rect x="460" y="120" width="160" height="50"/>
+  <text x="480" y="150">Data Storage</text>
+
+  <line x1="200" y1="145" x2="240" y2="145"/>
+  <line x1="420" y1="145" x2="460" y2="145"/>
+</svg>

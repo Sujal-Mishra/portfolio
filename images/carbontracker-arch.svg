@@ -1,0 +1,29 @@
+<svg width="750" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: #eaeaea; font-family: Inter, sans-serif; font-size: 14px; }
+    rect { fill: #111; stroke: #00c896; rx: 10; }
+    line { stroke: #aaa; stroke-width: 2; marker-end: url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="120" width="150" height="50"/>
+  <text x="55" y="150">Campus Data</text>
+
+  <rect x="220" y="120" width="180" height="50"/>
+  <text x="240" y="150">Processing Engine</text>
+
+  <rect x="430" y="120" width="180" height="50"/>
+  <text x="450" y="150">Emission Model</text>
+
+  <rect x="640" y="120" width="150" height="50"/>
+  <text x="665" y="150">Dashboards</text>
+
+  <line x1="190" y1="145" x2="220" y2="145"/>
+  <line x1="400" y1="145" x2="430" y2="145"/>
+  <line x1="610" y1="145" x2="640" y2="145"/>
+</svg>

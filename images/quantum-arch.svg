@@ -1,0 +1,15 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: #eaeaea; font-family: Inter, sans-serif; font-size: 14px; }
+    rect { fill: #111; stroke: #a855f7; rx: 10; }
+  </style>
+
+  <rect x="200" y="40" width="200" height="50"/>
+  <text x="235" y="70">Quantum Computing</text>
+
+  <rect x="200" y="120" width="200" height="50"/>
+  <text x="225" y="150">Cryptography Impact</text>
+
+  <rect x="200" y="200" width="200" height="50"/>
+  <text x="215" y="230">Cybersecurity Models</text>
+</svg>

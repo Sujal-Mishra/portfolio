@@ -1,0 +1,34 @@
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: #eaeaea; font-family: Inter, sans-serif; font-size: 14px; }
+    rect { fill: #111; stroke: #7f5af0; rx: 10; }
+    line { stroke: #aaa; stroke-width: 2; marker-end: url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3"
+      orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="110" width="120" height="50"/>
+  <text x="40" y="140">Camera</text>
+
+  <rect x="170" y="110" width="160" height="50"/>
+  <text x="190" y="140">MediaPipe + OpenCV</text>
+
+  <rect x="360" y="110" width="130" height="50"/>
+  <text x="385" y="140">MLP Model</text>
+
+  <rect x="520" y="110" width="180" height="50"/>
+  <text x="545" y="140">NLP + Translation</text>
+
+  <rect x="730" y="110" width="120" height="50"/>
+  <text x="760" y="140">Speech / GUI</text>
+
+  <line x1="140" y1="135" x2="170" y2="135"/>
+  <line x1="330" y1="135" x2="360" y2="135"/>
+  <line x1="490" y1="135" x2="520" y2="135"/>
+  <line x1="700" y1="135" x2="730" y2="135"/>
+</svg>

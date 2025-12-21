@@ -1,0 +1,29 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { fill: #eaeaea; font-family: Inter, sans-serif; font-size: 14px; }
+    rect { fill: #111; stroke: #2cb67d; rx: 10; }
+    line { stroke: #aaa; stroke-width: 2; marker-end: url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <rect x="40" y="120" width="140" height="50"/>
+  <text x="55" y="150">Input Document</text>
+
+  <rect x="220" y="120" width="180" height="50"/>
+  <text x="235" y="150">Structure Analysis</text>
+
+  <rect x="430" y="120" width="180" height="50"/>
+  <text x="445" y="150">Optimization Engine</text>
+
+  <rect x="640" y="120" width="120" height="50"/>
+  <text x="655" y="150">Eco Output</text>
+
+  <line x1="180" y1="145" x2="220" y2="145"/>
+  <line x1="400" y1="145" x2="430" y2="145"/>
+  <line x1="610" y1="145" x2="640" y2="145"/>
+</svg>
