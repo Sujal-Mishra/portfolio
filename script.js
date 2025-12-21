@@ -169,25 +169,24 @@ if (heroWord) {
    OTHER INTERESTS INTERACTION
 ========================================= */
 
-const interestButtons = document.querySelectorAll(".interests-list button");
+const interestButtons = document.querySelectorAll(".interest-chip");
 const interestDisplay = document.getElementById("interestDisplay");
 
 interestButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    const icon = btn.getAttribute("data-icon");
-    const text = btn.getAttribute("data-text");
+    const icon = btn.dataset.icon;
+    const text = btn.dataset.text;
 
     interestDisplay.innerHTML = `
       <span class="interest-icon">${icon}</span>
       <p class="interest-text">${text}</p>
     `;
 
-    interestDisplay.classList.add("active");
-
     interestButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
   });
 });
+
 
 
 
