@@ -136,3 +136,44 @@ footer {
   inset: 0;
   z-index: 9999;
 }
+
+/* === INTERACTIVE BACKGROUND ORBS === */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-orbs span {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(127,90,240,0.25), transparent 60%);
+  filter: blur(80px);
+  animation: float 20s infinite ease-in-out;
+}
+
+.bg-orbs span:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+
+.bg-orbs span:nth-child(2) {
+  top: 50%;
+  left: 60%;
+  animation-duration: 25s;
+}
+
+.bg-orbs span:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-duration: 30s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(80px, -60px); }
+  100% { transform: translate(0, 0); }
+}
+
