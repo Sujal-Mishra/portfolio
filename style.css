@@ -591,4 +591,13 @@ footer {
               0 0 20px rgba(255, 255, 255, 0.08);
 }
 
+/* ===============================
+   SECTION HEADING FONT (CORMORANT)
+================================ */
+
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
 
