@@ -97,7 +97,7 @@ if (heroWord) {
     const progress = Math.min(scrollY / heroHeight, 1);
 
     // fade out
-    heroWord.style.opacity = `${1 - progress * 1.1}`;
+    heroWord.style.opacity = `${1 - progress * 2}`;
 
     // subtle upward drift (editorial feel)
     heroWord.style.transform = `
