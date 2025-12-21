@@ -302,3 +302,59 @@ footer {
   opacity: 0.85;
   font-size: 1.05em;
 }
+
+/* ===============================
+   AURA / BEYOND TECH SKILLS
+================================ */
+
+.aura-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.aura-skill {
+  position: relative;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid #2a2a2a;
+  color: #eaeaea;
+  cursor: default;
+  transition: border 0.3s ease;
+}
+
+.aura-skill:hover {
+  border-color: #38bdf8;
+}
+
+.aura-skill span {
+  font-size: 0.95rem;
+}
+
+/* Hidden detail */
+.aura-detail {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #111;
+  color: #cfcfcf;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  width: 240px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid #1f1f1f;
+  z-index: 10;
+}
+
+/* Reveal on hover */
+.aura-skill:hover .aura-detail {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
