@@ -1,6 +1,6 @@
-/* ===============================
-   GLOBAL RESET & BASE
-================================ */
+/* =====================================================
+   RESET & BASE
+===================================================== */
 
 * {
   margin: 0;
@@ -20,9 +20,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ===============================
-   INTERACTIVE BACKGROUND ORBS
-================================ */
+/* =====================================================
+   BACKGROUND ORBS
+===================================================== */
 
 .bg-orbs {
   position: fixed;
@@ -41,8 +41,8 @@ body {
     transparent 60%
   );
   filter: blur(90px);
+  will-change: transform;
   transition: background 0.8s ease;
-
 }
 
 .bg-orbs span:nth-child(1) {
@@ -60,19 +60,19 @@ body {
   left: 30%;
 }
 
-/* ===============================
+/* =====================================================
    NAVBAR
-================================ */
+===================================================== */
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: 1.4rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(15, 15, 15, 0.8);
+  background: rgba(15, 15, 15, 0.75);
   backdrop-filter: blur(12px);
   z-index: 1000;
 }
@@ -98,22 +98,28 @@ nav a:hover {
   color: #ffffff;
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
+/* =====================================================
+   HERO SECTION + 3D
+===================================================== */
 
 .hero {
   min-height: 100vh;
   padding: 8rem 3rem 4rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 560px;
+  z-index: 2;
 }
 
 .hero h1 {
   font-size: 3.5rem;
+  line-height: 1.15;
   margin-bottom: 1.2rem;
-  line-height: 1.2;
 }
 
 .hero h1 span {
@@ -121,20 +127,45 @@ nav a:hover {
 }
 
 .hero p {
-  max-width: 550px;
   color: #cfcfcf;
   margin-bottom: 2rem;
 }
 
-/* ===============================
+/* 3D visual container */
+.hero-visual {
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+#system3d {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hide 3D on mobile */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+}
+
+/* =====================================================
    BUTTON
-================================ */
+===================================================== */
 
 .btn {
   display: inline-block;
   padding: 0.8rem 1.6rem;
   background: #7f5af0;
-  color: #ffffff;
+  color: #fff;
   border-radius: 999px;
   text-decoration: none;
   width: fit-content;
@@ -143,12 +174,12 @@ nav a:hover {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(127, 90, 240, 0.4);
+  box-shadow: 0 10px 26px rgba(127, 90, 240, 0.4);
 }
 
-/* ===============================
+/* =====================================================
    SECTIONS
-================================ */
+===================================================== */
 
 .section {
   padding: 6rem 3rem;
@@ -164,9 +195,51 @@ nav a:hover {
   color: #d4d4d4;
 }
 
-/* ===============================
+/* =====================================================
+   WAYS OF THINKING
+===================================================== */
+
+.ways-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.way {
+  padding: 1.4rem 1.6rem;
+  border-radius: 16px;
+  border: 1px solid #1f1f1f;
+  background: rgba(17, 17, 17, 0.6);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.way h3 {
+  font-size: 1.05rem;
+}
+
+.way p {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.way:hover {
+  transform: translateY(-4px);
+  border-color: #7f5af0;
+}
+
+.way:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================================
    SKILLS
-================================ */
+===================================================== */
 
 .skills-grid {
   display: flex;
@@ -182,18 +255,18 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-/* ===============================
+/* =====================================================
    PROJECTS
-================================ */
+===================================================== */
 
 .project-card {
   border: 1px solid #1f1f1f;
   border-radius: 18px;
   padding: 1.8rem;
   margin-bottom: 1.6rem;
-  transition: transform 0.3s ease, border 0.3s ease;
   cursor: pointer;
   background: rgba(17, 17, 17, 0.6);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -205,13 +278,14 @@ nav a:hover {
   margin-bottom: 0.6rem;
 }
 
-.project-card p {
-  color: #bdbdbd;
+.project-card .emoji {
+  margin-right: 0.45rem;
+  opacity: 0.85;
 }
 
-/* ===============================
-   MODAL (CRITICAL)
-================================ */
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal {
   display: none;
@@ -221,8 +295,8 @@ nav a:hover {
   backdrop-filter: blur(10px);
   z-index: 9999;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
@@ -233,16 +307,18 @@ nav a:hover {
   max-width: 900px;
   max-height: 85vh;
   overflow-y: auto;
+  animation: modalIn 0.35s ease;
 }
 
-.modal-content h4 {
-  margin-top: 1.6rem;
-  margin-bottom: 0.6rem;
-}
-
-.modal-content ul {
-  padding-left: 1.3rem;
-  color: #cfcfcf;
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .modal-content object {
@@ -260,9 +336,9 @@ nav a:hover {
   color: #bdbdbd;
 }
 
-/* ===============================
+/* =====================================================
    FOOTER
-================================ */
+===================================================== */
 
 footer {
   padding: 2.5rem;
@@ -270,9 +346,9 @@ footer {
   color: #777;
 }
 
-/* ===============================
+/* =====================================================
    RESPONSIVE
-================================ */
+===================================================== */
 
 @media (max-width: 768px) {
   nav {
@@ -287,74 +363,3 @@ footer {
     padding: 4rem 1.5rem;
   }
 }
-
-.svg-container svg {
-  width: 100%;
-  height: auto;
-}
-
-/* ===============================
-   PROJECT EMOJIS
-================================ */
-
-.project-card .emoji {
-  margin-right: 0.45rem;
-  opacity: 0.85;
-  font-size: 1.05em;
-}
-
-/* ===============================
-   AURA / BEYOND TECH SKILLS
-================================ */
-
-.aura-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-.aura-skill {
-  position: relative;
-  padding: 0.7rem 1.3rem;
-  border-radius: 999px;
-  border: 1px solid #2a2a2a;
-  color: #eaeaea;
-  cursor: default;
-  transition: border 0.3s ease;
-}
-
-.aura-skill:hover {
-  border-color: #38bdf8;
-}
-
-.aura-skill span {
-  font-size: 0.95rem;
-}
-
-/* Hidden detail */
-.aura-detail {
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  background: #111;
-  color: #cfcfcf;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  width: 240px;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  border: 1px solid #1f1f1f;
-  z-index: 10;
-}
-
-/* Reveal on hover */
-.aura-skill:hover .aura-detail {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
