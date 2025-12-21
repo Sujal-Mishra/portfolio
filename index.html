@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Suji | Portfolio</title>
+  <title>suji | portfolio</title>
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -14,7 +14,7 @@
 
 <body>
 
-  <!-- INTERACTIVE BACKGROUND -->
+  <!-- BACKGROUND ORBS -->
   <div class="bg-orbs">
     <span></span>
     <span></span>
@@ -35,7 +35,7 @@
   <!-- HERO -->
   <section class="hero" data-orb="#7f5af0">
     <h1>
-      building systems<br>
+      building systems<br />
       that <span>matter quietly</span>
     </h1>
     <p>
@@ -56,9 +56,69 @@
       and core java concepts like oop and dsa.
       <br><br>
       across projects, i focus on problem framing, validation, scalability,
-      documentation, and responsible execution. i approach technology as something
-      that should quietly improve systems and people’s lives.
+      documentation, and responsible execution. i think technology works best when
+      it quietly improves systems and people’s lives.
     </p>
+  </section>
+
+  <!-- WAYS OF THINKING -->
+  <section class="section ways" data-orb="#0ea5e9">
+    <h2>ways of thinking</h2>
+
+    <div class="ways-list">
+
+      <div class="way">
+        <h3>Systems Thinking</h3>
+        <p>
+          i like understanding how parts interact as a whole — technical, human,
+          and organizational.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Calm Leadership</h3>
+        <p>
+          i focus on alignment, listening, and momentum rather than authority
+          or control.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Pattern Recognition</h3>
+        <p>
+          i naturally notice recurring signals in people, systems, and ideas.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Ownership in Ambiguity</h3>
+        <p>
+          when things feel unstructured, i step in to bring clarity and direction.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Sense-Making & Clarity</h3>
+        <p>
+          i enjoy turning complexity into something understandable and actionable.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Reflective Problem-Solving</h3>
+        <p>
+          i question assumptions, refine ideas quietly, and improve what already exists.
+        </p>
+      </div>
+
+      <div class="way">
+        <h3>Progress over Perfection</h3>
+        <p>
+          i value steady improvement and consistency more than intensity or polish.
+        </p>
+      </div>
+
+    </div>
   </section>
 
   <!-- SKILLS -->
@@ -76,65 +136,6 @@
       <span>Research & Documentation</span>
     </div>
   </section>
-
-  <!-- BEYOND TECH -->
-<section id="beyond-tech" class="section" data-orb="#38bdf8">
-  <h2>ways of thinking</h2>
-
-  <div class="aura-grid">
-
-    <div class="aura-skill">
-      <span>Systems Thinking</span>
-      <div class="aura-detail">
-        I like understanding how parts interact as a whole — technical, human, or organizational.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Calm Leadership</span>
-      <div class="aura-detail">
-        I focus on alignment, listening, and momentum rather than authority or control.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Pattern Recognition</span>
-      <div class="aura-detail">
-        I naturally notice recurring signals in people, systems, and ideas.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Ownership in Ambiguity</span>
-      <div class="aura-detail">
-        When things feel unstructured, I step in to bring clarity and direction.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Sense-Making & Clarity</span>
-      <div class="aura-detail">
-        I enjoy turning complexity into something understandable and actionable.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Reflective Problem-Solving</span>
-      <div class="aura-detail">
-        I question assumptions, refine ideas quietly, and improve what already exists.
-      </div>
-    </div>
-
-    <div class="aura-skill">
-      <span>Progress over Perfection</span>
-      <div class="aura-detail">
-        I value steady improvement and consistency more than intensity or polish.
-      </div>
-    </div>
-
-  </div>
-</section>
-
 
   <!-- PROJECTS -->
   <section id="projects" class="section" data-orb="#a855f7">
@@ -229,16 +230,16 @@
   <!-- CONTACT -->
   <section id="contact" class="section" data-orb="#ec4899">
     <h2>contact</h2>
-    <p>let’s build something meaningful.</p>
+    <p>let’s build something meaningful together.</p>
     <a href="mailto:yourmail@gmail.com" class="btn">say hello</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 suji. built with intent.</p>
+    <p>© 2025 suji. built with curiosity.</p>
   </footer>
 
-  <!-- PROJECT MODAL -->
+  <!-- MODAL -->
   <div id="projectModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -246,8 +247,7 @@
       <p id="modalDesc"></p>
 
       <h4>architecture</h4>
-      <div id="modalImg" class="svg-container"></div>
-
+      <div id="modalImg"></div>
 
       <h4>tech & focus</h4>
       <ul id="modalList"></ul>
@@ -256,6 +256,8 @@
 
   <!-- JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
+
 
