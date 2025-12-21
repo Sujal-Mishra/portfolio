@@ -365,8 +365,8 @@ footer {
 
 .hero-bg-word.polymath {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 52%;
+  left: 68%;
   transform: translate(-50%, -50%);
   
   font-family: 'Space Grotesk', sans-serif;
@@ -386,13 +386,19 @@ footer {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  opacity: 0.6;
+  opacity: 0.4;
   pointer-events: none;
   user-select: none;
   z-index: 1;
   white-space: nowrap;
   filter: blur(0.3px);
 }
+
+.hero-bg-word.polymath {
+  max-width: 90vw;
+  overflow: hidden;
+}
+
 
 .hero-content {
   position: relative;
