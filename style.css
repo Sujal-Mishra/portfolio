@@ -464,3 +464,42 @@ footer {
   color: #7f5af0;
 }
 
+/* ===============================
+   METRIC VALUE COLORS (THEME)
+================================ */
+
+.metric-card h3 {
+  color: #eaeaea; /* fallback */
+}
+
+/* Purple – core theme */
+.metric-card.accent-purple h3 {
+  color: #7f5af0;
+}
+
+/* Cyan / curiosity */
+.metric-card.accent-cyan h3 {
+  color: #22d3ee;
+}
+
+/* Indigo / systems thinking */
+.metric-card.accent-indigo h3 {
+  color: #818cf8;
+}
+
+/* Green / collaboration */
+.metric-card.accent-green h3 {
+  color: #4ade80;
+}
+
+/* Violet / growth */
+.metric-card.accent-violet h3 {
+  color: #a855f7;
+}
+
+/* Orange / warning already exists */
+.metric-card.warning h3 {
+  color: #f97316;
+}
+
+
