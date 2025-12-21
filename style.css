@@ -41,7 +41,8 @@ body {
     transparent 60%
   );
   filter: blur(90px);
-  transition: background 0.8s ease, transform 0.3s ease;
+  transition: background 0.8s ease;
+
 }
 
 .bg-orbs span:nth-child(1) {
