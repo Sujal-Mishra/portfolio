@@ -83,6 +83,31 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOrbs();
 
   /* ===============================
+   HERO BG WORD FADE ON SCROLL
+================================ */
+
+const heroWord = document.querySelector(".hero-bg-word");
+
+if (heroWord) {
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const heroHeight = document.querySelector(".hero").offsetHeight;
+
+    // progress from 0 → 1
+    const progress = Math.min(scrollY / heroHeight, 1);
+
+    // fade out
+    heroWord.style.opacity = `${1 - progress * 1.1}`;
+
+    // subtle upward drift (editorial feel)
+    heroWord.style.transform = `
+      translate(-50%, calc(-50% - ${progress * 40}px))
+    `;
+  });
+}
+
+
+  /* ===============================
      ORB COLOR ON SCROLL
   =============================== */
 
