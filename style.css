@@ -413,3 +413,54 @@ footer {
     opacity: 0.35;
   }
 }
+
+/* ===============================
+   PERSONAL METRICS SECTION
+================================ */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid #1f1f1f;
+  border-radius: 18px;
+  padding: 1.4rem;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-6px);
+  border-color: #a855f7;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a8a8a;
+}
+
+.metric-card h3 {
+  margin: 0.4rem 0;
+  font-size: 1.4rem;
+}
+
+.metric-card p {
+  font-size: 0.85rem;
+  color: #bdbdbd;
+}
+
+/* Variants */
+.metric-card.warning h3 {
+  color: #f97316;
+}
+
+.metric-card.accent h3 {
+  color: #7f5af0;
+}
+
