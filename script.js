@@ -1,93 +1,94 @@
-/* =================================================
-   PROJECT MODAL LOGIC (SVG-SAFE)
-================================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-const modal = document.getElementById("projectModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalImg = document.getElementById("modalImg");
-const modalList = document.getElementById("modalList");
-const closeBtn = document.querySelector(".close");
+  /* ================================================
+     PROJECT MODAL LOGIC
+  ================================================ */
 
-function openModal(title, desc, img, points) {
-  modalTitle.innerText = title;
-  modalDesc.innerText = desc;
+  const modal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const modalImg = document.getElementById("modalImg");
+  const modalList = document.getElementById("modalList");
+  const closeBtn = document.querySelector(".close");
 
-  // SVG-safe loading via <object>
-  modalImg.setAttribute("data", img);
+  window.openModal = function(title, desc, img, points) {
+    modalTitle.innerText = title;
+    modalDesc.innerText = desc;
+    modalImg.setAttribute("data", img);
 
-  modalList.innerHTML = "";
-  points.forEach(point => {
-    const li = document.createElement("li");
-    li.innerText = point;
-    modalList.appendChild(li);
+    modalList.innerHTML = "";
+    points.forEach(point => {
+      const li = document.createElement("li");
+      li.innerText = point;
+      modalList.appendChild(li);
+    });
+
+    modal.style.display = "flex";
+  };
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
   });
 
-  modal.style.display = "flex";
-}
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+  /* ================================================
+     INTERACTIVE BACKGROUND (MOUSE MOVE)
+  ================================================ */
 
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-/* =================================================
-   INTERACTIVE BACKGROUND – MOUSE REACTION
-================================================= */
-
-document.addEventListener("mousemove", (e) => {
   const orbs = document.querySelectorAll(".bg-orbs span");
 
-  orbs.forEach((orb, index) => {
-    const speed = (index + 1) * 0.015;
-    const x = (window.innerWidth / 2 - e.clientX) * speed;
-    const y = (window.innerHeight / 2 - e.clientY) * speed;
-
-    orb.style.transform = `translate(${x}px, ${y}px)`;
+  document.addEventListener("mousemove", (e) => {
+    orbs.forEach((orb, index) => {
+      const speed = (index + 1) * 0.02;
+      const x = (window.innerWidth / 2 - e.clientX) * speed;
+      const y = (window.innerHeight / 2 - e.clientY) * speed;
+      orb.style.transform = `translate(${x}px, ${y}px)`;
+    });
   });
+
+  /* ================================================
+     ORB COLOR CHANGE ON SCROLL
+  ================================================ */
+
+  const sections = document.querySelectorAll("[data-orb]");
+
+  function hexToRgb(hex) {
+    const bigint = parseInt(hex.replace("#", ""), 16);
+    return {
+      r: (bigint >> 16) & 255,
+      g: (bigint >> 8) & 255,
+      b: bigint & 255
+    };
+  }
+
+  function updateOrbColor() {
+    let activeColor = "#7f5af0";
+    const mid = window.innerHeight * 0.5;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= mid && rect.bottom >= mid) {
+        activeColor = section.dataset.orb;
+      }
+    });
+
+    const { r, g, b } = hexToRgb(activeColor);
+
+    orbs.forEach(orb => {
+      orb.style.setProperty(
+        "--orb-color",
+        `rgba(${r}, ${g}, ${b}, 0.25)`
+      );
+    });
+  }
+
+  window.addEventListener("scroll", updateOrbColor);
+  updateOrbColor();
+
 });
 
-/* =================================================
-   ORB COLOR CHANGE BASED ON SCROLL SECTION
-================================================= */
-
-const sections = document.querySelectorAll("[data-orb]");
-const orbs = document.querySelectorAll(".bg-orbs span");
-
-function hexToRgb(hex) {
-  const bigint = parseInt(hex.replace("#", ""), 16);
-  const r = (bigint >> 16) & 255;
-  const g = (bigint >> 8) & 255;
-  const b = bigint & 255;
-  return `${r}, ${g}, ${b}`;
-}
-
-function updateOrbColor() {
-  let activeColor = "#7f5af0";
-
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    const midPoint = window.innerHeight * 0.5;
-
-    if (rect.top <= midPoint && rect.bottom >= midPoint) {
-      activeColor = section.getAttribute("data-orb");
-    }
-  });
-
-  orbs.forEach(orb => {
-    orb.style.setProperty(
-      "--orb-color",
-      `rgba(${hexToRgb(activeColor)}, 0.25)`
-    );
-  });
-}
-
-window.addEventListener("scroll", updateOrbColor);
-updateOrbColor();
 
 
