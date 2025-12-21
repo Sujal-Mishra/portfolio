@@ -518,5 +518,17 @@ footer {
   );
   opacity: 0.6;
 }
+/* ===============================
+   SCROLL STORY TEXT
+================================ */
+
+.section-story {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  max-width: 520px;
+  opacity: 0.85;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
 
 
