@@ -165,5 +165,21 @@ if (heroWord) {
   window.addEventListener("scroll", updateOrbColor);
   updateOrbColor();
 
+  /* =========================================
+   OTHER INTERESTS INTERACTION
+========================================= */
+
+const interestButtons = document.querySelectorAll(".interests-list button");
+const interestDisplay = document.getElementById("interestDisplay");
+
+interestButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const icon = btn.getAttribute("data-icon");
+    interestDisplay.innerHTML = icon;
+    interestDisplay.classList.add("active");
+  });
+});
+
+
 });
 
