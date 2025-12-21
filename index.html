@@ -34,16 +34,28 @@
 
   <!-- HERO -->
   <section class="hero" data-orb="#7f5af0">
-    <h1>
-      building systems<br />
-      that <span>matter quietly</span>
-    </h1>
-    <p>
-      hey, i’m suji — a first-year cse student who enjoys building systems
-      end-to-end and thinking deeply about how technology translates
-      into real-world impact.
-    </p>
-    <a href="#projects" class="btn">see what i’ve built</a>
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-content">
+      <h1>
+        building systems<br />
+        that <span>matter quietly</span>
+      </h1>
+
+      <p>
+        hey, i’m suji — a first-year cse student who enjoys building systems
+        end-to-end and thinking deeply about how technology translates
+        into real-world impact.
+      </p>
+
+      <a href="#projects" class="btn">see what i’ve built</a>
+    </div>
+
+    <!-- RIGHT 3D VISUAL -->
+    <div class="hero-visual">
+      <canvas id="system3d"></canvas>
+    </div>
+
   </section>
 
   <!-- ABOUT -->
@@ -66,58 +78,34 @@
     <h2>ways of thinking</h2>
 
     <div class="ways-list">
-
       <div class="way">
         <h3>Systems Thinking</h3>
-        <p>
-          i like understanding how parts interact as a whole — technical, human,
-          and organizational.
-        </p>
+        <p>i like understanding how parts interact as a whole — technical, human, and organizational.</p>
       </div>
-
       <div class="way">
         <h3>Calm Leadership</h3>
-        <p>
-          i focus on alignment, listening, and momentum rather than authority
-          or control.
-        </p>
+        <p>i focus on alignment, listening, and momentum rather than authority or control.</p>
       </div>
-
       <div class="way">
         <h3>Pattern Recognition</h3>
-        <p>
-          i naturally notice recurring signals in people, systems, and ideas.
-        </p>
+        <p>i naturally notice recurring signals in people, systems, and ideas.</p>
       </div>
-
       <div class="way">
         <h3>Ownership in Ambiguity</h3>
-        <p>
-          when things feel unstructured, i step in to bring clarity and direction.
-        </p>
+        <p>when things feel unstructured, i step in to bring clarity and direction.</p>
       </div>
-
       <div class="way">
         <h3>Sense-Making & Clarity</h3>
-        <p>
-          i enjoy turning complexity into something understandable and actionable.
-        </p>
+        <p>i enjoy turning complexity into something understandable and actionable.</p>
       </div>
-
       <div class="way">
         <h3>Reflective Problem-Solving</h3>
-        <p>
-          i question assumptions, refine ideas quietly, and improve what already exists.
-        </p>
+        <p>i question assumptions, refine ideas quietly, and improve what already exists.</p>
       </div>
-
       <div class="way">
         <h3>Progress over Perfection</h3>
-        <p>
-          i value steady improvement and consistency more than intensity or polish.
-        </p>
+        <p>i value steady improvement and consistency more than intensity or polish.</p>
       </div>
-
     </div>
   </section>
 
@@ -254,10 +242,14 @@
     </div>
   </div>
 
+  <!-- THREE.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
   <!-- JS -->
   <script src="script.js"></script>
 
 </body>
 </html>
+
 
 
