@@ -658,3 +658,24 @@ footer {
   transform: scale(1.05);
 }
 
+/* ===============================
+   INTEREST DISPLAY TEXT
+================================ */
+
+.interest-display {
+  text-align: center;
+}
+
+.interest-icon {
+  font-size: 3.5rem;
+  display: block;
+}
+
+.interest-text {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  max-width: 180px;
+  line-height: 1.4;
+}
+
