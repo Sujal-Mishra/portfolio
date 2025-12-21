@@ -678,4 +678,59 @@ footer {
   max-width: 180px;
   line-height: 1.4;
 }
+/* ===============================
+   OTHER INTERESTS (FINAL LAYOUT)
+================================ */
+
+/* chips row */
+.interest-chips {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* chip style (matches aura skills) */
+.interest-chip {
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid #2a2a2a;
+  background: transparent;
+  color: #eaeaea;
+  cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-chip:hover {
+  border-color: rgba(255,255,255,0.4);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.15),
+    0 0 18px rgba(255,255,255,0.08);
+}
+
+.interest-chip.active {
+  border-color: #f59e0b;
+}
+
+/* center display */
+.interest-display {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.interest-icon {
+  font-size: 4rem;
+  display: block;
+}
+
+.interest-text {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
 
