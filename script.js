@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
   window.openModal = function(title, desc, img, points) {
     modalTitle.innerText = title;
     modalDesc.innerText = desc;
-    modalImg.setAttribute("data", img);
+    fetch(img)
+  .then(res => res.text())
+  .then(svg => {
+    modalImg.innerHTML = svg;
+  })
+  .catch(() => {
+    modalImg.innerHTML = "<p>Diagram failed to load</p>";
+  });
+
 
     modalList.innerHTML = "";
     points.forEach(point => {
