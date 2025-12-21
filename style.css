@@ -132,18 +132,6 @@ nav a:hover {
 }
 
 /* 3D visual container */
-.hero-visual {
-  width: 420px;
-  height: 420px;
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-#system3d {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
 
 /* Hide 3D on mobile */
 @media (max-width: 900px) {
@@ -152,9 +140,7 @@ nav a:hover {
     text-align: left;
   }
 
-  .hero-visual {
-    display: none;
-  }
+
 }
 
 /* =====================================================
