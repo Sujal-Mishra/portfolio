@@ -349,3 +349,32 @@ footer {
     padding: 4rem 1.5rem;
   }
 }
+
+/* ===============================
+   HERO BACKGROUND WORD
+================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.04); /* 4% opacity */
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
