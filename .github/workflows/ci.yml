@@ -11,4 +11,4 @@ jobs:
         run: |
           uname -a
           hostname
-          echo "Running on Kali Linuxx"
+          echo "Running on Kali Linu"
